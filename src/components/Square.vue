@@ -1,5 +1,5 @@
 <template>
-    <div class="square" :style="{ background: color }" v-on:click="handleClick(color)">
+    <div class="square" :style="{ background: color }" v-on:click="colorClick(color)">
 
     </div>
 </template>
@@ -19,7 +19,7 @@
       }
     },
     methods: {
-        handleClick(color){            
+        colorClick(color){            
             if(color === this.pickedColor){
                 this.getMessage('You Picked Right!')
             }

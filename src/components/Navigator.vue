@@ -1,11 +1,11 @@
 <template>
 
   <div id="navigator">
-		<button id="reset" v-on:click="reset"> {{ getResetBtnTxt }} </button>
+		<button id="reset" v-on:click="reset"> {{ resetText }} </button>
 		<span id="message"> {{ message }} </span>
 
-		<button id="easy" v-on:click="handleDificultyChanged(false)" :class="!isHard ? 'selected' : ''">easy</button>
-		<button id="hard" v-on:click="handleDificultyChanged(true)" :class="isHard ? 'selected' : ''">hard</button>
+		<button id="easy" v-on:click="changeLevel(false)" :class="!isHard ? 'selected' : ''">easy</button>
+		<button id="hard" v-on:click="changeLevel(true)" :class="isHard ? 'selected' : ''">hard</button>
 	</div>
 
 </template>
@@ -23,7 +23,7 @@
       }
     },
     methods: {
-		handleDificultyChanged(isHard){
+		changeLevel(isHard){
 			if(this.isHard !== isHard){
 				this.isHard = isHard
 				this.restart(isHard)
@@ -34,7 +34,7 @@
 		}
     },
     computed: {
-        getResetBtnTxt: function () {
+        resetText: function () {
             return this.message === 'You Picked Right!' ? 'Play Again!' : 'New colors!'  
         }
     }

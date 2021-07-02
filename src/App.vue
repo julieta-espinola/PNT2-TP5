@@ -1,8 +1,8 @@
 <template>
   <div id="app">
-    <Header :pickedColor="pickedColor" :hasWon="hasWon"/>
+    <Header :pickedColor="pickedColor" :isWinner="isWinner"/>
     <Navigator :message="message" :restart="restart"/>
-    <Container :colors="colors" :pickedColor="pickedColor" :hasWon="hasWon" :getMessage="getMessage"/>
+    <Container :colors="colors" :pickedColor="pickedColor" :isWinner="isWinner" :getMessage="getMessage"/>
   </div>
 </template>
 
@@ -65,7 +65,7 @@ export default {
     }    
   },
   computed: {
-    hasWon: function () {
+    isWinner: function () {
       return this.message === 'You Picked Right!'
     }
   }
